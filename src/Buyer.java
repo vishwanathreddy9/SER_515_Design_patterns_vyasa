@@ -1,5 +1,6 @@
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Buyer extends Person {
 
@@ -36,10 +37,11 @@ public class Buyer extends Person {
 	public Product[] CreateProductMenu(int productType) {
 		ClassProductList classProductList = new ClassProductList();
 		List<Product> productsList = classProductList.getProductInfoList();
-		List<Product> productsListNew = productsList.stream().filter(e -> e.getProductType()==productType).toList();
+		List<Product> productsListNew = productsList.stream().filter(e -> e.getProductType()==productType).collect(Collectors.toList());
 		int size = productsListNew.size();
 		int i=0;
 		Product[] productArray = new Product[size];
+		//Implementing iterator pattern here
 		Iterator<Product> itr = productsListNew.listIterator();
 		while(itr.hasNext()){
 			productArray[i] = itr.next();

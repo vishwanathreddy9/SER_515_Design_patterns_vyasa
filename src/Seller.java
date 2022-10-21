@@ -71,6 +71,7 @@ public class Seller extends Person {
 		int size = productsList.size();
 		int i=0;
 		Product[] productArray = new Product[size];
+		//Implementing iterator pattern here
 		Iterator<Product> itr = productsList.listIterator();
 		while(itr.hasNext()){
 			productArray[i] = itr.next();
