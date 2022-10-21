@@ -2,4 +2,4 @@
 Steps to perform
 Clone repository
 Run Main file
-Look FOr the output in the terminal
+Look For the output in the terminal
