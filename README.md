@@ -1,5 +1,5 @@
 # SER_515_Design_patterns_vyasa
 Steps to perform
-Clone repository
-Run Main file
-Look For the output in the terminal
+1. Clone repository
+2. Run Main file
+3. Look For the output in the terminal
