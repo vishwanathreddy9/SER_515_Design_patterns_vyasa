@@ -26,8 +26,6 @@ public abstract class Person implements ProductMenu {
 
 	}
 
-	public ProductMenu CreateProductMenu() {
-		return null;
-	}
+	public abstract Product[] CreateProductMenu(int productType);
 
 }

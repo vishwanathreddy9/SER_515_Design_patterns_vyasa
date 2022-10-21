@@ -1,10 +1,27 @@
+import java.util.Iterator;
+import java.util.List;
+
 public class Buyer extends Person {
 
-	private Seller seller;
+	//private Seller seller;
 
 	private Person person;
+	private ProductMenu productMenu;
+
+	private UserInfoItem userInfoItem;
+
+	private  Product[] products;
+	public Buyer(UserInfoItem userInfoItem, Product[] products) {
+		this.userInfoItem = userInfoItem;
+		this.products = products;
+	}
+
+	public Buyer(UserInfoItem userInfoItem) {
+		this.userInfoItem = userInfoItem;
+	}
 
 	public void showMenu() {
+		System.out.println("Buyer Menu");
 
 	}
 
@@ -16,8 +33,20 @@ public class Buyer extends Person {
 	/**
 	 *  
 	 */
-	public ProductMenu CreateProductMenu() {
-		return null;
+	public Product[] CreateProductMenu(int productType) {
+		ClassProductList classProductList = new ClassProductList();
+		List<Product> productsList = classProductList.getProductInfoList();
+		List<Product> productsListNew = productsList.stream().filter(e -> e.getProductType()==productType).toList();
+		int size = productsListNew.size();
+		int i=0;
+		Product[] productArray = new Product[size];
+		Iterator<Product> itr = productsListNew.listIterator();
+		while(itr.hasNext()){
+			productArray[i] = itr.next();
+			i++;
+		}
+		classProductList.printProductList(productArray);
+		return productArray;
 	}
 
 }
